@@ -129,7 +129,7 @@ let foodArr = [{
     tags: ['Large', 'Pepperoni', 'Pizza']
 },
 {
-    name: 'Humourous Big Pizza Name',
+    name: 'Humourous Pizza Name',
     price: 9,
     category: 'entree',
     popularity: 6,
@@ -198,12 +198,12 @@ let manyCheese = foodArr.filter((food) => food.tags.includes('Multi-Cheese'))
 
 //CODE HERE
 function filterByProperty(property, number,  type){
-    // let filteredFood = []
-    // if (type === "above"){
-    let filteredFood = foodArr.filter((elem) => elem.property > number)
-    // } else if (type === "below") {
-    //     filteredFood.push(foodArr.filter((elem) => elem.property < number))
-    // }
+    let filteredFood = []
+    if (type === "above"){
+        filteredFood.push(foodArr.filter((elem) => elem[property] > number))
+    } else if (type === "below") {
+        filteredFood.push(foodArr.filter((elem) => elem[property] < number))
+    }
     return filteredFood
 }
 
@@ -215,4 +215,4 @@ function filterByProperty(property, number,  type){
 */
 
 //CODE HERE
-console.log(filterByProperty('rating', 2, 'above'))
+console.log(filterByProperty('rating', 5, 'below'))
