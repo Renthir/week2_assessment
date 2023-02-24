@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+let pizza = {
+    name: 'The Extra Slice',
+    price: 15,
+    category: 'entree',
+    popularity: 9,
+    rating: 4,
+    tags: ['Extra Large', 'Multi-topping', 'Customizable', 'Pizza']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,8 +70,8 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+// console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +80,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+// console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +96,46 @@
 */
 
 //CODE HERE
-
+let foodArr = [{
+    name: 'Garlic Bread',
+    price: 5,
+    category: 'appetizer',
+    popularity: 7,
+    rating: 3,
+    tags: ['Small', 'Bread']
+},
+{
+    name: 'Cheese Bread',
+    price: 5,
+    category: 'appetizer',
+    popularity: 8,
+    rating: 4,
+    tags: ['Medium', 'Bread', 'Multi-Cheese']
+},
+{
+    name: 'Cheese-inator',
+    price: 7,
+    category: 'entree',
+    popularity: 7,
+    rating: 4,
+    tags: ['Large', 'Multi-Cheese', 'Pizza']
+},
+{
+    name: 'Pepper-oni',
+    price: 8,
+    category: 'entree',
+    popularity: 10,
+    rating: 5,
+    tags: ['Large', 'Pepperoni', 'Pizza']
+},
+{
+    name: 'Humourous Big Pizza Name',
+    price: 9,
+    category: 'entree',
+    popularity: 6,
+    rating: 4,
+    tags: ['Large', 'Multi-topping', 'Pizza']
+}]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,10 +151,11 @@
 */
 
 //CODE HERE
+let manyCheese = foodArr.filter((food) => food.tags.includes('Multi-Cheese'))
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
-
+// console.log(manyCheese)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +197,15 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number,  type){
+    // let filteredFood = []
+    // if (type === "above"){
+    let filteredFood = foodArr.filter((elem) => elem.property > number)
+    // } else if (type === "below") {
+    //     filteredFood.push(foodArr.filter((elem) => elem.property < number))
+    // }
+    return filteredFood
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +215,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 2, 'above'))

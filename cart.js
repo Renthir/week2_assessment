@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, cur) => {return acc + cur.price}, 0)
+// console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +54,11 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return (cartTotal * (1 + tax)) - couponValue
+}
 
-
+// console.log(calcFinalPrice(100, 10, .08))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +82,13 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    {
+        customerID: number/string - in a simple system just keeps track of what number customer this is, in a complex system we could track this customer's return trips to gain insights about different things
+        itemsBought: array of strings - we can track purchases to calculate which menu items are more popular in an area, we could prioritize their prep over less popular items
+        cartTotal: number - calculate the ammount people in this area tend to spend, allowing us to dial in our prices to optimize purchases
+        couponUsed: boolean - helps determine whether giving out coupons can improve sales or if it doesn't affect sales in this area, or by how much
+        date: string(?) - Determine when sales are higher, or when discounts and other deals will be most productive for sales
+    }
 */
 
 /*
@@ -88,3 +97,11 @@ const cart = [
 */
 
 //CODE HERE
+
+let custObj = {
+    customerID: 123,
+    itemsBought: ['Garlic Bread', 'The Extra Slice'],
+    cartTotal: 20,
+    couponUsed: true,
+    date: '2/24/2023'
+}
