@@ -1,0 +1,12 @@
+company ASML {
+    Major Languages used: [Java, C++, Python, C#,]
+    Other Tech/Langs utilized: [C, .NET, MATLAB, UX]
+    /*
+    Why They use the languages:
+        Different parts of the process have Different requirements.
+        Java is used to make diagnostic tools for the machines to keep them running.
+        Python is used for calibration and performance monitoring
+        C# Used for the machine control software to implement complex algorithms
+        C++ Used to solve process problems the other languages may not be suited for, or for prototyping solutions
+    */
+}
